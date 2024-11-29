@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cq28lgi3ju2x1"]
+
+[ext_resource type="Script" uid="uid://dge4g6xfwp68s" path="res://addons/Mournguard-Utils/MouseAnchorLine/mouse_anchor_line.gd" id="1_rumst"]
+
+[sub_resource type="Gradient" id="Gradient_6n1cs"]
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sy5hn"]
+gradient = SubResource("Gradient_6n1cs")
+
+[node name="MouseAnchorLine" type="TextureRect"]
+top_level = true
+offset_bottom = 3.0
+pivot_offset = Vector2(0, 2)
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_sy5hn")
+expand_mode = 1
+script = ExtResource("1_rumst")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
